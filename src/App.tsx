@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { dommyImages } from "./images";
 
 interface ImageItem {
@@ -9,20 +9,22 @@ interface ImageItem {
 
 function App() {
 
-  const [images, setImages] = useState<ImageItem[]>([]); 
+  // const images = dommyImages.images;
 
-  useEffect(() => {
-    setImages(dommyImages.images)
-  }, [])
+  const [images, setImages] = useState<ImageItem[]>(dommyImages.images); 
+
+  // useEffect(() => {
+  //   setImages(dommyImages.images)
+  // }, [])
 
   return (
     <>
-    <div className="flex justify-center">
+    <div className="h-screen flex justify-center">
       {images.length > 0 ?(
         <ul>
           {images.map((img) => (
-            <li key={img.id}>
-              <img src={img.url} alt={img.name} width="800" height="600" />
+            <li key={img.id} >
+              <img src={img.url} alt={img.name} width="800" height="300" />
             </li>
           ))}
         </ul>
