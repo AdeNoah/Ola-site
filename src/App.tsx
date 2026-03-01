@@ -1,21 +1,14 @@
-import { useState } from "react";
 import { dommyImages } from "./images";
 
-interface ImageItem {
-  id: number;
-  name: string;
-  url: string;
-}
+// interface ImageItem {
+//   id: number;
+//   name: string;
+//   url: string;
+// }
 
 function App() {
 
-  // const images = dommyImages.images;
-
-  const [images, setImages] = useState<ImageItem[]>(dommyImages.images); 
-
-  // useEffect(() => {
-  //   setImages(dommyImages.images)
-  // }, [])
+  const images = dommyImages.images;
 
   return (
     <>
